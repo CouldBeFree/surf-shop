@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const { postRegister, postLogin, postLogout } = require('../controllers');
-const { errorHandler } = require('../middleware');
+const { asyncErrorHandler } = require('../middleware');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Surf Shop - home' });
+  res.render('index.ejs', { title: 'Surf Shop - home' });
 });
 
 /* GET /register */
@@ -14,7 +14,7 @@ router.get('/register', (req, res, next) => {
 });
 
 /* POST /register */
-router.post('/register', errorHandler(postRegister));
+router.post('/register', asyncErrorHandler(postRegister));
 
 /* GET /login */
 router.get('/login', (req, res, next) => {
