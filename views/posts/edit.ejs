@@ -2,16 +2,16 @@
 
 <form action="/posts/<%= post.id %>?_method=PUT" method="POST">
     <div>
-        <input type="text" name="title" value="<%= post.title %>" placeholder="Title">
+        <input type="text" name="post[title]" value="<%= post.title %>" placeholder="Title">
     </div>
     <div>
-        <input type="text" name="price" value="<%= post.price %>" placeholder="Price">
+        <input type="text" name="post[price]" value="<%= post.price %>" placeholder="Price">
     </div>
     <div>
-        <textarea name="description" placeholder="Description"><%= post.description %></textarea>
+        <textarea name="post[description]" placeholder="Description"><%= post.description %></textarea>
     </div>
     <div>
-        <input type="text" name="location" value="<%= post.location %>" placeholder="Location">
+        <input type="text" name="post[location]" value="<%= post.location %>" placeholder="Location">
     </div>
 
     <input type="submit">
