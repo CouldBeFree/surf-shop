@@ -1,5 +1,6 @@
 require('dotenv').config();
 const createError = require('http-errors');
+const engine = require('ejs-mate');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -19,7 +20,7 @@ const posts = require('./routes/posts');
 const app = express();
 
 // connect to the database
-mongoose.connect('mongodb://localhost:27017/surf-shop-mapbox', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/surf-shop', { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -28,6 +29,7 @@ db.once('open', function() {
 });
 
 // view engine setup
+app.engine('ejs', engine);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // setup public assets directory
