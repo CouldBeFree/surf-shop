@@ -74,6 +74,14 @@ module.exports = {
                 })
             }
         }
+        if(req.body.post.location !== post.location){
+            let response = await geocodingClient.forwardGeocode({
+                query: req.body.post.location,
+                limit: 1
+            })
+                .send();
+            post.coordinates = response.body.features[0].geometry.coordinates;
+        }
         post.title = req.body.post.title;
         post.description = req.body.post.description;
         post.price = req.body.post.price;
