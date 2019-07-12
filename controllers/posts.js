@@ -34,8 +34,6 @@ module.exports = {
             .send();
         req.body.post.coordinates = response.body.features[0].geometry.coordinates;
         let post = await Post.create(req.body.post);
-        console.log(post);
-        console.log(post.coordinates);
         res.redirect(`/posts/${post.id}`)
     },
 

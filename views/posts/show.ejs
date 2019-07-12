@@ -14,3 +14,11 @@
 <form action="/posts/<%= post.id %>?_method=DELETE" method="post">
     <input type="submit" value="Delete">
 </form>
+
+<h2>Reviews</h2>
+<h3>Create a review</h3>
+<form action="/posts/<%= post.id %>/reviews" method="post">
+    <textarea name="review[body]" required></textarea>
+    <input type="number" name="review[rating]" min="1" max="5" step="1" required>
+    <input type="submit">
+</form>

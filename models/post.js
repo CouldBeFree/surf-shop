@@ -5,6 +5,7 @@ const PostSchema = new Schema({
     title: String,
     price: String,
     description: String,
+    reviews: Array,
     images: [ {url: String, public_id: String} ],
     location: String,
     coordinates: Array,
