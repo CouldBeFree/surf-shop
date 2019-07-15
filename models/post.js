@@ -5,15 +5,14 @@ const PostSchema = new Schema({
     title: String,
     price: String,
     description: String,
-    reviews: Array,
-    images: [ {url: String, public_id: String} ],
+    images: [ { url: String, public_id: String } ],
     location: String,
     coordinates: Array,
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    posts: [
+    reviews: [
         {
             type: Schema.Types.ObjectId,
             ref: 'Review'
