@@ -4,8 +4,8 @@ body {
 }
 
 #map {
-    width: 700px;
-    height: 400px;
+    width: 350px;
+    height: 200px;
 }
 
 .marker {
@@ -24,4 +24,8 @@ body {
 .mapboxgl-popup-content {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
+}
+
+.edit-review-form{
+    display: none;
 }
