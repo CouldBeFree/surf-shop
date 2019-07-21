@@ -11,6 +11,11 @@ const User = require('./models/user');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+/*
+const seedPost = require('./seeds');
+
+seedPost();
+*/
 
 // require routes
 const index = require('./routes/index');
