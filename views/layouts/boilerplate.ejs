@@ -5,8 +5,10 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <% include ../partials/navbar.ejs %>
-    <% include ../partials/flash-messages.ejs %>
-    <%- body -%>
+    <div class="wrapper">
+        <% include ../partials/navbar.ejs %>
+        <% include ../partials/flash-messages.ejs %>
+        <%- body -%>
+    </div>
 </body>
 </html>
